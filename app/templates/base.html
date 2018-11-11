@@ -22,8 +22,7 @@
         </div>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <div style="text-align: right; padding: 80px;">
-          <ul>
+          <ul style="list-style-type: none; color: red; padding: 10px 80px;">
             {% for message in messages %}
             <li>{{ message }}</li>
             {% endfor %}
@@ -31,6 +30,5 @@
         {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
-        </div>
     </body>
 </html>
