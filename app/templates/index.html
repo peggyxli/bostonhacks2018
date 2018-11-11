@@ -1,8 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <div style="text-align: left; margin:auto; padding: 10px 50px 10px 50px; font-family:'Gotham 7r',Helvetica,Arial,sans-serif">
+        <h1>Hello, {{ current_user.email }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.email }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+        <div style="margin-top: 45px;">
+            <a href="" style=" font-family: 'Gotham 7r',Helvetica,Arial,sans-serif;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            border-radius: 3.2rem;
+                            color: #242424;
+                            background-color: #ffffff;
+                            font-size: 1rem;
+                            padding: 1em;
+                            margin-bottom:12px;
+                            border: 2px solid #242424;
+                            font-weight: 600;">Google Calendar</a>
+            <a href="" style=" font-family: 'Gotham 7r',Helvetica,Arial,sans-serif;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            border-radius: 3.2rem;
+                            color: #242424;
+                            background-color: #ffffff;
+                            font-size: 1rem;
+                            padding: 1em;
+                            margin-bottom:12px;
+                            border: 2px solid #242424;
+                            font-weight: 600;">Spotify API</a>
+            <a href="" style=" font-family: 'Gotham 7r',Helvetica,Arial,sans-serif;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            border-radius: 3.2rem;
+                            color: #242424;
+                            background-color: #ffffff;
+                            font-size: 1rem;
+                            padding: 1em;
+                            margin-bottom:12px;
+                            border: 2px solid #242424;
+                            font-weight: 600;">Weather API</a>
+        </div>
+    </div>
 {% endblock %}
