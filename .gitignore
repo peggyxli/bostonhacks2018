@@ -1,2 +1,8 @@
 /venv/
 .idea/
+app.db
+credentials.json
+__pycache__
+.DS_Store
+/Calendar/.DS_Store
+/Calendar/token.json
