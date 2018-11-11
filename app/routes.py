@@ -67,9 +67,13 @@ def register():
 
 @app.route('/alarm', methods=['GET', 'POST'])
 def alarm():
-    xml = """<play_info><app_key>fhlvYKfsanEBDRGpFmezAM2iRM7ZuHA7</app_key><url>http://www.music.helsinki.fi/tmt/opetus/uusmedia/esim/a2002011001-e02-128k.mp3</url><service>service text</service><reason>reason text</reason><message>message text</message><volume>25</volume></play_info>"""
+    # xml = """<play_info><app_key>fhlvYKfsanEBDRGpFmezAM2iRM7ZuHA7</app_key><url>http://www.music.helsinki.fi/tmt/opetus/uusmedia/esim/a2002011001-e02-128k.mp3</url><service>service text</service><reason>reason text</reason><message>message text</message><volume>25</volume></play_info>"""
+    # headers = {'Content-Type': 'application/xml'} # set what your server accepts
+    # requests.post('http://10.192.199.251:8090/speaker', data=xml, headers=headers)
+
+    xml = """<key state="release" sender="Gabbo">PRESET_1</key>"""
     headers = {'Content-Type': 'application/xml'} # set what your server accepts
-    requests.post('http://10.192.199.251:8090/speaker', data=xml, headers=headers)
+    requests.post('http://10.192.199.251:8090/key', data=xml, headers=headers)
 
     response_xml_as_string = requests.get('http://10.192.199.251:8090/now_playing', data=xml, headers=headers).text
     root = ET.fromstring(response_xml_as_string)
