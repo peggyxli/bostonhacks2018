@@ -1,29 +1,32 @@
 <html>
     <head>
         {% if title %}
-        <title>{{ title }} - microblog</title>
+        <title>{{ title }}</title>
         {% else %}
-        <title>microblog</title>
+        <title>BostonULTIMATE</title>
         {% endif %}
     </head>
-    <body>
-      <div>
-          Microblog:
-          <a href="{{ url_for('index') }}">Home</a>
+    <body style="margin:0; font-family:'Gotham 4r',Helvetica,Arial,sans-serif">
+        <div>
+          <a style="padding-left: 20px; text-decoration: none;" href="{{ url_for('index') }}">
+            <img style="width: auto; height: 77px; margin-right: 80px; margin-top: 0!important;" src="/static/images/bose-logo.png"/>
+          </a>
+        </div>
+        <div style="margin: 0!important; background: #000000; opacity:0.8; text-align:right; padding: 10px; font-family:'Gotham 7r',Helvetica,Arial,sans-serif">
+          <!--<a style="padding-right: 30px; text-decoration: none;" href="{{ url_for('index') }}">Home</a>-->
           {% if current_user.is_anonymous %}
-          <a href="{{ url_for('login') }}">Login</a>
+          <a style="font-size: 12px; font-weight: 800; color: #FFF; padding-right: 30px; text-decoration: none;" href="{{ url_for('login') }}">LOGIN</a>
           {% else %}
-          <a href="{{ url_for('logout') }}">Logout</a>
+          <a style="font-size: 12px; font-weight: 800; color: #FFF; padding-right: 30px; text-decoration: none;" href="{{ url_for('logout') }}">LOGOUT</a>
           {% endif %}
-      </div>
-        <hr>
+        </div>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul>
+          <ul style="list-style-type: none; color: red; padding: 10px 80px;">
             {% for message in messages %}
             <li>{{ message }}</li>
             {% endfor %}
-        </ul>
+          </ul>
         {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
