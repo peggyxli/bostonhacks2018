@@ -15,14 +15,14 @@
         <div style="margin: 0!important; background: #000000; opacity:0.8; text-align:right; padding: 10px; font-family:'Gotham 7r',Helvetica,Arial,sans-serif">
           <!--<a style="padding-right: 30px; text-decoration: none;" href="{{ url_for('index') }}">Home</a>-->
           {% if current_user.is_anonymous %}
-          <a style="font-size: 12px; font-weight: 800; padding-right: 30px; text-decoration: none;" href="{{ url_for('login') }}">LOGIN</a>
+          <a style="font-size: 12px; font-weight: 800; color: #FFF; padding-right: 30px; text-decoration: none;" href="{{ url_for('login') }}">LOGIN</a>
           {% else %}
           <a style="font-size: 12px; font-weight: 800; color: #FFF; padding-right: 30px; text-decoration: none;" href="{{ url_for('logout') }}">LOGOUT</a>
           {% endif %}
         </div>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <div style="text-align: center;">
+        <div style="text-align: right; padding: 80px;">
           <ul>
             {% for message in messages %}
             <li>{{ message }}</li>

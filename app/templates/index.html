@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div style="text-align: left; margin:auto; padding: 10px 50px 10px 50px; font-family:'Gotham 7r',Helvetica,Arial,sans-serif">
+    <div style="text-align: left; margin:auto; padding: 50px; font-family:'Gotham 7r',Helvetica,Arial,sans-serif">
         <h1>Hello, {{ current_user.email }}!</h1>
         {% for post in posts %}
         <div><p>{{ post.author.email }} says: <b>{{ post.body }}</b></p></div>
